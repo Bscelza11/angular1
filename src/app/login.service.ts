@@ -12,6 +12,7 @@ constructor(){ }
 
 sendName(name: string) {
   this.nameUser$.next(name)
+
 }
 
 getNameUser(): Observable<string> {

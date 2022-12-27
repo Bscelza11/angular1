@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { UrlSerializer } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/login.service';
 
@@ -15,13 +14,17 @@ export class ProfileComponent implements OnInit {
 
   constructor(private loginService: LoginService) {
     this.suscription = this.loginService.getNameUser().subscribe(data => {
-      this.name = data;
-      console.log(data)
+      data = this.name;
+      
    });
   }
 
   ngOnInit(): void {
     
+  }
+
+  mostrar() {
+    console.log(this.name)
   }
 
   
